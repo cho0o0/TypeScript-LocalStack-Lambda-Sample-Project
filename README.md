@@ -1,5 +1,7 @@
 # TypeScript LocalStack Lambda Sample Project
 
+[![CircleCI](https://circleci.com/gh/cho0o0/TypeScript-LocalStack-Lambda-Sample-Project.svg?style=shield)](https://circleci.com/gh/cho0o0/TypeScript-LocalStack-Lambda-Sample-Project)
+
 ## Introduction
 
 This is a sample project to show how to integrate TypeScript, Jest, Localstack, Serverless Framework, and CircleCI together to achieve a relatively seamless AWS lambda development workflow locally.  
