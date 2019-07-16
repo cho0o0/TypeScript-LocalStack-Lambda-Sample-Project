@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  localstack:
+    image: localstack/localstack:0.9.5
+    ports:
+      - '4567-4597:4567-4597'
+      - '${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}'
+    environment:
+      SERVICES: lambda, s3, cloudformation, apigateway, iam, sts
+      DATA_DIR: ./tmp/localstack/data
+      PORT_WEB_UI: 8080
+      LAMBDA_EXECUTOR: docker
+      LAMBDA_REMOTE_DOCKER: 'true'
+    volumes:
+      - './tmp/localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'

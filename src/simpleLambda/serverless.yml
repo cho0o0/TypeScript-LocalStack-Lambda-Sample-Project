@@ -1,0 +1,5 @@
+events:
+  - http:
+      path: /
+      method: get
+      cors: true

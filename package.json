@@ -1,0 +1,57 @@
+{
+  "name": "local-lambda",
+  "version": "0.0.1",
+  "description": "A local AWS lambda sample",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node",
+    "dev:watch": "ts-node-dev --respawn",
+    "clean": "rimraf dist/*",
+    "tsc": "tsc",
+    "lint": "eslint --fix src/**/*",
+    "build": "npm-run-all lint clean tsc",
+    "test:unit": "npx jest",
+    "test:e2e": "npx jest --config=./jest.config.e2e.js",
+    "webpack": "webpack",
+    "localstack:up": "docker-compose -f ./docker-compose-local.yml up -d",
+    "localstack:down": "docker-compose -f ./docker-compose-local.yml down",
+    "serverless": "cd dist && npx serverless deploy --stage local --verbose",
+    "out": "npm-run-all lint clean webpack"
+  },
+  "keywords": [
+    "lambda",
+    "typescript",
+    "localstack"
+  ],
+  "author": "202accepted",
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.28",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "jest-junit": "^6.4.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "serverless": "^1.47.0",
+    "serverless-localstack": "^0.4.15",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.492.0",
+    "axios": "^0.19.0"
+  }
+}

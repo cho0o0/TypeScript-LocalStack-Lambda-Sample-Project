@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "charset": "utf8",
+    "target": "ES2017",
+    "lib": ["esnext"],
+    "outDir": "./dist",
+    "baseUrl": "./src"
+  },
+  "include": ["src/**/*", "test/**/*"]
+}

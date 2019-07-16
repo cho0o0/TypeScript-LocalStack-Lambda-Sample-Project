@@ -1,0 +1,25 @@
+service: localLambda
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: local
+
+plugins:
+  - serverless-localstack
+
+package:
+  individually: true
+  excludeDevDependencies: false
+
+custom:
+  localstack:
+    debug: true
+    host: http://localhost
+    stages:
+      - local
+    autostart: true
+  lambda:
+    mountCode: true
+
+functions:
